@@ -1,0 +1,345 @@
+<!doctype html>
+<html class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Andika - Portofolio</title>
+        <link rel="icon" href="dist/img/.png">
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+        
+        <style type="text/tailwindcss">
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .btn-primary{
+            transition: transform 0.3s ease;
+            }
+
+            .btn-primary:hover{
+                transform: translateY(-3px);
+            }
+
+            .hamburger-icon {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 6px auto;
+            transition: 0.4s;
+            }
+            .change .bar1 {
+                -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+                transform: rotate(-45deg) translate(-6px, 6px);
+            }
+            .change .bar2 {
+                opacity: 0;
+            }
+            .change .bar3 {
+                -webkit-transform: rotate(45deg) translate(-6px, -6px);
+                transform: rotate(45deg) translate(-6px, -6px);
+            }
+        </style>
+        <!-- Boxicons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- Text Color -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    container: {
+                        center: true,
+                        padding: '16px', 
+                    },
+                    extend: {
+                        colors: {
+                            primary: '#2563EB',
+                            dark: '#0f172a',
+                            secondary: '#64748b',
+                        },
+                        screens: {
+                            '2xl': '1230px',
+                        }
+                    }  
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="bg-dark fixed bg-dark drop-shadow-sm top-0 left-0 w-full flex items-center z-10">
+            <div class="container">
+                <div class="flex items-center justify-between relative">
+                    <div class="px-4">
+                        <a href="index.html" class="font-bold text-lg text-primary block py-6 tracking-wide"><span class="text-white text-2xl font-bold">Andika<span class="text-primary">.SianiPar</span></span></a>
+                    </div>
+                    <div id="hamburger" class="hamburger block absolute right-4 lg:hidden ">
+                        <div class="hamburger-icon bar1"></div>
+                        <div class="hamburger-icon bar2"></div>
+                        <div class="hamburger-icon bar3"></div>
+                    </div>
+                    <!-- Navlink -->
+                    <div class="px-4">
+                        <div class="hidden absolute py-5 rounded-lg w-full right-4 top-full lg:block lg:static lg:bg-transparent  lg:rounded-none lg:shadow-none">
+                            <ul class="block lg:flex">
+                                <li class="group">
+                                    <a class="text-base text-white py-2 mx-5 group-hover:text-primary flex" href="#home">Beranda</a>
+                                </li>
+                                <li class="group">
+                                    <a class="text-base text-white py-2 mx-5 group-hover:text-primary flex" href="#about">Tentang saya</a>
+                                </li>
+                                <li class="group">
+                                    <a class="text-base text-white py-2 mx-5 group-hover:text-primary flex" href="#portfolio">Portfolio</a>
+                                </li>
+                                <li class="group">
+                                    <a class="text-base text-white py-2 mx-5 group-hover:text-primary flex" href="#kontak">Kontak</a>
+                                </li>
+                            </ul>
+                        </div>
+                    <!-- /Navlink -->
+                    </div>
+                </div>
+                <!-- menu mobile -->
+                <div id="mobile-menu" class="hidden sm-hidden">
+                    <div class="px-1 pt-1 pb-2 space-y-1">
+                        <p class="text-white block px-3 py-2 text-base font-medium">Menu:</p>
+                        <a href="#home" class="text-white hover:underline block px-3 py-2 text-base font-medium">Beranda</a>
+                        <a href="#about" class="text-white hover:underline block px-3 py-2 text-base font-medium">Tentang saya</a>
+                        <a href="#portfolio" class="text-white hover:underline block px-3 py-2 text-base font-medium">Portfolio</a>
+                        <a href="#kontak" class="text-white hover:underline block px-3 py-2 text-base font-medium">Kontak</a>
+                    </div>
+                </div>
+                <!-- /menu mobile -->
+            </div>
+        </header>
+        <!-- /Header -->
+
+        <!-- Home -->
+        <section id="home" class="pt-36  pb-32 bg-dark">
+            <div class="container">
+                <div class="flex flex-wrap">
+                    <div class="w-full self-center px-4 lg:w-1/2">
+                        <h1 class="text-2xl font-bold text-primary">Hallo Semua 👋🏼, Saya Andika</h1> 
+                        <h2 class="text-5xl text-white mt-3 mb-3 font-bold"><span id="typed"></span></h2>
+                        <p class="font-normal text-secondary mb-10 leading-relaxed"> Saya Berasal dari Sumatra Utara dan saya seorang mahasiswa ilmu komputer di <a href="https://undiksha.ac.id/" target="_blank"><span class="font-semibold text-primary">Universitas Pendidikan Ganesha</span></a>. Saya mempelajari bidang ini karena ketertarikan saya terhadap inovasi teknologi yang terus berkembang.</p>
+                        <div class="mt-6 flex items-center">    
+                            <a href="#" class="btn-primary text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 transition duration-300 ease-in-out">Hubungi saya</a>          
+                        </div>
+                    </div>
+                    <div class="w-full self-end px-4 lg:w-1/2">
+                        <div class="mt-10 lg:mt-12 lg:right-0">
+                            <img src="dist/img/profile.png" alt="" class="max-w-full mx-auto w-96">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Home -->
+
+        <!-- About -->
+        <section id="about" class="pt-36 pb-32">
+            <div class="container">
+                <div class="flex flex-wrap">
+                    <div class="w-full px-4 mb-5 lg:w-1/2">
+                        <h4 class="text-base font-medium text-primary mb-2">Tentang saya</h4>
+                        <h2 class="font-bold text-dark text-2xl lg:text-3xl mb-5">Mahasiswa IT</h2>
+                        <p class="font-normal text-secondary mb-5 text-justify lg:max-w-xl">Sebagai seorang mahasiswa IT, saya telah terlibat dalam dunia teknologi informasi dengan semangat dan antusiasme yang tinggi Dengan tekad untuk terus mengembangkan pengetahuan dan keterampilan dalam bidang ini, saya telah aktif dalam berbagai proyek dan kegiatan di kampus. Belajar tentang pemrograman, jaringan komputer, keamanan cyber, dan teknologi terbaru telah menjadi bagian integral dari perjalanan pendidikan saya. Selain itu, saya juga aktif dalam komunitas mahasiswa IT, di mana saya berkolaborasi dengan teman-teman sejawat untuk menjalankan inisiatif teknologi yang relevan.</p>
+                    </div>
+                    <div class="w-full px-4 lg:w-1/2">
+                        <h3 class="font-bold text-dark text-xl lg:text-2xl mb-5 lg:pt-8">Mari berteman</h3>
+                        <p class="font-normal text-secondary mb-4 leading-relaxed">Temukan saya di berbagai sosial media, jangan lupa untuk follow dan subscribe chanel Youtube saya juga ya hehe.</p>
+                        <div class="flex items-center">
+                            <!-- Youtube -->
+                            <a href="https://www.youtube.com/channel/UCqL2UikootDAd5ZGfEYvruQ" target="_blank" class="w-10 h-10 mr-2 rounded-full flex justify-center items-center text-slate-500 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                                <i class='bx bxl-youtube fill-current text-2xl'></i>
+                            </a>
+                            <!-- Linkedin -->
+                            <a href="#" target="_blank" class="w-10 h-10 mr-2 rounded-full flex justify-center items-center text-slate-500 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                                <i class='bx bxl-linkedin fill-current text-2xl'></i>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://instagram.com/dika_s22?igshid=NzZlODBkYWE4Ng==" target="_blank" class="w-10 h-10 mr-2 rounded-full flex justify-center items-center text-slate-500 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                                <i class='bx bxl-instagram-alt fill-current text-2xl'></i>
+                            </a>
+                            <!-- Github -->
+                            <a href="https://github.com/Andika-Sianipar" target="_blank" class="w-10 h-10 mr-2 rounded-full flex justify-center items-center text-slate-500 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                                <i class='bx bxl-github fill-current text-2xl'></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /About -->
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="pt-36 pb-16 bg-slate-100">
+            <div class="container">
+                <div class="w-full px-4">
+                    <div class="max-w-xl mx-auto text-center mb-16">
+                        <h4 class="text-base font-medium text-primary mb-2">Portfolio</h4>
+                        <h2 class="font-bold text-dark text-2xl lg:text-3xl mb-5">Proyek</h2>
+                        <p class="font-normal text-secondary leading-relaxed">~ Berikut adalah beberapa proyek sederhana yang pernah saya buat ~</p>
+                    </div>
+                </div>
+                <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+                    <div class="mb-8 p-4 md:w-1/2">
+                        <div class="rounded-md shadow-md overflow-hidden">
+                            <img src="dist/img/1.jpg" class="w-full" alt="">
+                        </div>
+                        <h3 class="font-bold text-dark text-lg lg:text-xl mt-5 mb-3 lg:pt-8">Web - Portfolio</h3>
+                        <a href="#" class="flex items-center text-primary font-medium text-sm mt-2">
+                            <span class="mr-2 hover:underline">Lihat Projek</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="mb-8 p-4 md:w-1/2">
+                        <div class="rounded-md shadow-md overflow-hidden">
+                            <img src="dist/img/5.jpg" class="w-full" alt="">
+                        </div>
+                        <h3 class="font-bold text-dark text-lg lg:text-xl mt-5 mb-3 lg:pt-8">Web - Kalkulator Sederhana</h3>
+                        <a href="https://andika-sianipar.github.io/Website/" class="flex items-center text-primary font-medium text-sm mt-2">
+                            <span class="mr-2 hover:underline">Lihat Projek</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Portfolio -->
+
+        <!-- Contact -->
+        <section id="kontak" class="pt-36 pb-32">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="block md:flex items-center justify-between">
+                    <div>
+                        <h4 class="text-primary text-3xl lg:text-[38px] font-bold mb-2">Punya proyek yang sedang Anda pikirkan ?</h4>
+                        <p class="font-normal text-secondary mt-4">jangan ragu untuk menghubungi saya atau sekadar menyapa dengan ramah !</p>
+                    </div>
+                    <div class="mt-8 md:mt-0 flex items-center">    
+                        <a href="#" class="btn-primary text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 transition duration-300 ease-in-out">Hubungi saya</a>          
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section id="kontak" class="pt-36 pb-32">
+            <div class="container">
+                <div class="w-full px-4">
+                    <div class="max-w-xl mb-16">
+                        <h4 class="text-base font-medium text-primary mb-2">Kontak</h4>
+                        <h2 class="font-bold text-dark text-2xl lg:text-3xl mb-5">Hubungi saya</h2>
+                        <p class="font-normal text-secondary mb-10 leading-relaxed">Terkait kolaborasi, pertanyaan atau penawaran pekerjaan silahkan mengisi formulir pesan dibawah ini.</p>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="w-full lg:w-2/3">
+                        <div class="w-full px-4 mb-8">
+                            <input type="text" id="nama" placeholder="Nama lengkap" class="text-base border-b w-full text-dark pb-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div class="w-full px-4 mb-8">
+                            <input type="email" id="email" placeholder="Alamat email" class="text-base border-b w-full text-dark pb-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div class="w-full px-4 mb-12">
+                            <textarea type="text" id="pesam" placeholder="Tulis pesan" class="text-base border-b w-full text-dark pb-3 h-32 focus:outline-none focus:border-primary"></textarea>
+                        </div>
+                        <div class="px-4">
+                            <a href="#kontak" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">Kirim pesan</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section> -->
+        <!-- /Contact -->
+
+        <!-- Footer -->
+        <footer class="bg-dark pt-16 pb-12">
+            <!-- <div class="container">
+                <div class="flex flex-wrap">
+                    <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
+                        <h2 class="font-bold text-4xl text-white mb-5">Elfira Nurul Ilma</h2>
+                        <h3 class="font-bold text-2xl mb-2">Hubungi saya</h3>
+                        <p>elfiranurul02@gmail.com</p>
+                        <p>Jl. H. Ilyas, Air putih</p>
+                        <p>Bengkalis - Riau</p>
+                    </div>
+                    <div class="w-full px-4 mb-12 md:w-1/3">
+                        <h3 class="font-semibold text-xl text-white mb-5">Kategori tulisan</h3>
+                        <ul class="text-slate-300">
+                            <li><a href="#" class="inline-block text-base hover:text-primary mb-3">Programming</a></li>
+                            <li><a href="#" class="inline-block text-base hover:text-primary mb-3">Teknologi</a></li>
+                            <li><a href="#" class="inline-block text-base hover:text-primary mb-3">Gaya hidup</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-full px-4 mb-12 md:w-1/3">
+                        <h3 class="font-semibold text-xl text-white mb-5">Tautan</h3>
+                        <ul class="text-slate-300">
+                            <li><a href="#" class="inline-block text-base hover:text-primary mb-3">Beranda</a></li>
+                            <li><a href="#" class="inline-block text-base hover:text-primary mb-3">Tentang saya</a></li>
+                            <li><a href="#" class="inline-block text-base hover:text-primary mb-3">Portfolio</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+                <div class="w-full pt-4">
+                    <div class="flex items-center justify-center mb-5">
+                        <!-- Youtube -->
+                        <a href="https://www.youtube.com/channel/UCqL2UikootDAd5ZGfEYvruQ" target="_blank" class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                            <i class='bx bxl-youtube fill-current text-2xl'></i>
+                        </a>
+                        <!-- Linkedin -->
+                        <a href="#" target="_blank" class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                            <i class='bx bxl-linkedin fill-current text-2xl'></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/dika_s22?igshid=NzZlODBkYWE4Ng==" target="_blank" class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                            <i class='bx bxl-instagram-alt fill-current text-2xl'></i>
+                        </a>
+                        <!-- Github -->
+                        <a href="https://github.com/Andika-Sianipar" target="_blank" class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                            <i class='bx bxl-github fill-current text-2xl'></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-500 text-sm text-center">Dimodifikasi <span class="text-indigo-500">🛠</span> oleh <a href="#" class="text-primary font-medium">Dika</a>, dengan <span class="text-yellow-400 font-medium">Niat</span></p>
+                </div>
+            </div>
+        </footer>
+        <!-- /Footer -->
+        <!-- Script start -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#hamburger").click(function(){
+                    $(this).toggleClass("change"); 
+                    $("#mobile-menu").slideToggle();
+                });
+
+                
+                $("#mobile-menu").on("click", "a", function(){
+                    $("#hamburger").removeClass("change"); 
+                    $("#mobile-menu").slideUp();
+                });
+            });
+        </script>
+        <script src="dist/js/script.js"></script>
+        <script>
+            var typed = new Typed ('#typed',{
+                strings:['IT Student','Programmer Junior'],
+                typeSpeed: 80,
+                backSpeed: 50,
+                loop: true
+            });
+        </script>
+        <!-- Script end -->
+    </body>
+</html>
