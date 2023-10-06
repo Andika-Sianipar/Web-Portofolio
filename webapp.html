@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.2.0/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Web - App</title>
+
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn-primary{
+        transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover{
+            transform: translateY(-3px);
+        }
+
+        .hamburger-icon {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 6px auto;
+        transition: 0.4s;
+        }
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+        .change .bar2 {
+            opacity: 0;
+        }
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-6px, -6px);
+            transform: rotate(45deg) translate(-6px, -6px);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    padding: '16px', 
+                },
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        dark: '#0f172a',
+                        secondary: '#64748b',
+                    },
+                    screens: {
+                        '2xl': '1230px',
+                    }
+                }  
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-dark fixed bg-dark drop-shadow-sm top-0 left-0 w-full flex items-center z-10">
+        <div class="container">
+            <div class="flex items-center justify-between relative">
+                <div class="px-4">
+                    <a href="https://andika-sianipar.github.io/Web-Portofolio/index.html" class="font-bold text-lg text-primary block py-6 tracking-wide"><span class="text-white text-2xl font-bold">Andika<span class="text-primary">.SianiPar</span></span></a>
+                </div>
+                <div id="hamburger" class="hamburger block absolute right-4 lg:hidden ">
+                    <div class="hamburger-icon bar1"></div>
+                    <div class="hamburger-icon bar2"></div>
+                    <div class="hamburger-icon bar3"></div>
+                </div>
+                <!-- Navlink -->
+                <div class="px-4">
+                    <div class="hidden absolute py-5 rounded-lg w-full right-4 top-full lg:block lg:static lg:bg-transparent  lg:rounded-none lg:shadow-none">
+                        <ul class="block lg:flex">
+                            <li class="group">
+                                <a class="text-base text-white py-2 mx-5 group-hover:text-primary flex" href="https://andika-sianipar.github.io/Web-Portofolio/#home">Beranda</a>
+                            </li>
+                            <li class="group">
+                                <a class="text-base text-white py-2 mx-5 group-hover:text-primary flex" href="https://andika-sianipar.github.io/Web-Portofolio/#about">Tentang saya</a>
+                            </li>
+                            <li class="group">
+                                <a class="text-base text-primary py-2 mx-5 group-hover:text-primary flex" href="">Portfolio</a>
+                            </li>
+                            <li class="group">
+                                <a class="text-base text-white py-2 mx-5 group-hover:text-primary flex" href="https://andika-sianipar.github.io/Web-Portofolio/#kontak">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                <!-- /Navlink -->
+                </div>
+            </div>
+            <!-- menu mobile -->
+            <div id="mobile-menu" class="hidden sm-hidden">
+                <div class="px-1 pt-1 pb-2 space-y-1">
+                    <p class="text-white block px-3 py-2 text-base font-medium">Menu:</p>
+                    <a href="#home" class="text-white hover:underline block px-3 py-2 text-base font-medium">Beranda</a>
+                    <a href="#about" class="text-white hover:underline block px-3 py-2 text-base font-medium">Tentang saya</a>
+                    <a href="#portfolio" class="text-white hover:underline block px-3 py-2 text-base font-medium">Portfolio</a>
+                    <a href="#kontak" class="text-white hover:underline block px-3 py-2 text-base font-medium">Kontak</a>
+                </div>
+            </div>
+            <!-- /menu mobile -->
+        </div>
+    </header>
+    <!-- /Header -->
+    <div id="app" class="bg-dark-900">
+        <section class="container px-4 mx-auto ">
+            <div class="flex flex-col mt-6 mb-40">
+                <div class="w-full mt-44 px-4">
+                    <div class="max-w-xl mx-auto text-center mb-16">
+                        <h1 class="font-bold text-3xl ">Daftar Tugas</h1>
+                    </div>
+                </div>
+                <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                        <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                <thead class="bg-gray-50 dark:bg-gray-800">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-dark-500 dark:text-dark-400">
+                                            <input type="time" class="form-control border rounded p-2" id="time" v-model="startTime">
+                                        </th>
+
+                                        <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-dark-500 dark:text-dark-400">
+                                            <input type="time" class="form-control border rounded p-2" id="time" v-model="endTime">
+                                        </th>
+        
+                                        <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-dark-500 dark:text-dark-400">
+                                            <input type="text" class="form-control border rounded p-2" placeholder="Aktivitas baru" v-model="activity">
+                                        </th>
+                                        <th scope="col" class="relative py-3.5 px-4">
+                                            <th scope="col" class="relative py-3.5 px-4">
+                                                <button class="btn btn-primary form-control bg-blue-500 text-white rounded p-2" @click="addTodo">+Tambah</button>
+                                            </th>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <thead class="bg-gray-50 dark:bg-gray-800">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <button class="flex items-center gap-x-2">
+                                                <span>Waktu Awal</span>
+                                            </button>
+                                        </th>
+
+                                        <th scope="col" class="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <button class="flex items-center gap-x-2">
+                                                <span>Waktu Akhir</span>
+                                            </button>
+                                        </th>
+        
+                                        <th scope="col" class="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400">Aktivitas</th>
+                                        
+                                        <th scope="col" class="px-12 py-3.5 text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <button class="flex items-center gap-x-2">
+                                                <span>Status</span>
+                                            </button>
+                                        </th>
+                                        
+                                        <th scope="col" class="px-9 py-3.5 text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <button class="flex items-center gap-x-2">
+                                                <span>Aksi</span>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                                    <tr v-for="(item, index) in todoList">
+                                        <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{item.start}}</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{item.end}}</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{item.text}}</td>
+                                        <td class="px-8 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                            <div v-if="item.done" class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+                                                <span  class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                                <h2 class="text-sm font-normal text-emerald-500">Done</h2>
+                                            </div>
+                                            <div v-else class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-red-100/60 dark:bg-gray-800">
+                                                <span   class="h-1.5 w-1.5 rounded-full bg-red-500"></span>
+                                                <h2 class="text-sm font-normal text-red-500">Undone</h2>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                            <div class="flex items-center gap-x-6">
+                                                <button  class="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-gray-300 hover:text-red-500 focus:outline-none" @click="deleteTodo(index)">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                    </svg>
+                                                </button>
+        
+                                                <button  class="text-gray-500 transition-colors duration-200 dark:hover:text-green-500 dark:text-gray-300 hover:text-green-500 focus:outline-none" @click="finishTodo(index)">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                      </svg>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark pt-16 pb-12">
+            <div class="w-full pt-4">
+                <div class="flex items-center justify-center mb-5">
+                    <!-- Youtube -->
+                    <a href="https://www.youtube.com/channel/UCqL2UikootDAd5ZGfEYvruQ" target="_blank" class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                        <i class='bx bxl-youtube fill-current text-2xl'></i>
+                    </a>
+                    <!-- Linkedin -->
+                    <a href="#" target="_blank" class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                        <i class='bx bxl-linkedin fill-current text-2xl'></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/dika_s22?igshid=NzZlODBkYWE4Ng==" target="_blank" class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                        <i class='bx bxl-instagram-alt fill-current text-2xl'></i>
+                    </a>
+                    <!-- Github -->
+                    <a href="https://github.com/Andika-Sianipar" target="_blank" class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white duration-300 ease-in-out">
+                        <i class='bx bxl-github fill-current text-2xl'></i>
+                    </a>
+                </div>
+                <p class="text-slate-500 text-sm text-center">Dimodifikasi <span class="text-indigo-500">🛠</span> oleh <a href="#" class="text-primary font-medium">Dika</a>, dengan <span class="text-yellow-400 font-medium">Niat</span></p>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+</body>
+
+<!-- Script start -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#hamburger").click(function(){
+            $(this).toggleClass("change"); 
+            $("#mobile-menu").slideToggle();
+        });
+
+        
+        $("#mobile-menu").on("click", "a", function(){
+            $("#hamburger").removeClass("change"); 
+            $("#mobile-menu").slideUp();
+        });
+    });
+</script>
+<script src="dist/js/script.js"></script>
+<script>
+    var typed = new Typed ('#typed',{
+        strings:['IT Student','Programmer Junior'],
+        typeSpeed: 80,
+        backSpeed: 50,
+        loop: true
+    });
+</script>
+<!-- Script end -->
+<script src="https://unpkg.com/vue@3.2.0/dist/vue.global.js"></script>
+<script src="app.js"></script>
+</html>
